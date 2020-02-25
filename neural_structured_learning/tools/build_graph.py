@@ -87,7 +87,7 @@ def _read_tfrecord_examples(filenames, id_feature_name, embedding_feature_name):
         logging.error('No feature named "%s" found in input Example: %s',
                       id_feature_name, tf_example.ShortDebugString())
         continue
-      ex_id = f_map[id_feature_name].bytes_list.value[0].decode('utf-8')
+      ex_id = f_map[id_feature_name].int64_list.value[0]
       if embedding_feature_name not in f_map:
         logging.error('No feature named "%s" found in input with ID "%s"',
                       embedding_feature_name, ex_id)
