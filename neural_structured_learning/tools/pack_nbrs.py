@@ -58,7 +58,7 @@ def _read_tfrecord_examples(filename, id_feature_name):
     Returns: The ID feature value as a (decoded) string.
     """
     id_feature = tf_example.features.feature[id_feature_name].int64_list
-    return id_feature.value[0]
+    return str(id_feature.value[0])
 
   start_time = time.time()
   logging.info('Reading tf.train.Examples from TFRecord file: %s...', filename)
