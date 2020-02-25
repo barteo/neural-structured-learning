@@ -184,7 +184,7 @@ class DistanceConfig(object):
   """
   distance_type = attr.ib(converter=DistanceType, default=DistanceType.L2)
   reduction = attr.ib(
-      default=tf.losses.Reduction.SUM_BY_NONZERO_WEIGHTS)
+      default=tf.compat.v1.losses.Reduction.SUM_BY_NONZERO_WEIGHTS)
   sum_over_axis = attr.ib(default=None)
   transform_fn = attr.ib(converter=TransformType, default='none')
 
